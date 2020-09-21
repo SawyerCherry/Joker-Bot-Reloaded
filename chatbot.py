@@ -1,23 +1,11 @@
 from random import choice
 
-print("Hello, my  name is Arthur. I am a sentient AI Chatbot.")
-
-user_response = ""
-
-bot_response_no = ["python", "doofus", "you dont follow instructions"]
-
-bot_response_yes = ["ok", "let\'s enter into the unknown", "okayyyyy"]
-
-while True:
-    
-    user_response = input("Are you ready to begin a series of Matrix trivia questions?")
-    
-    if user_response == 'done':
-
-        break
-
 
 def get_answer_to_first_question(user_response):
+
+    bot_response_no = ["Are you sure? I'll give you another chance", "Who wouldn't want to hear a joke", "eventually you'll have to say yes, you know that right?"]
+
+    bot_response_yes = ["ok", "let\'s enter into the unknown", "okayyyyy"]
 
     if user_response == "yes":
 
@@ -25,27 +13,32 @@ def get_answer_to_first_question(user_response):
 
     elif user_response == "no":
         
-        confirmation_no = input("are u sure, doofus (y/n)")
+        confirmation_no = input("are u sure, doofus (yes/no)")
 
-        if confirmation_no == "y":
+        if confirmation_no == "yes":
             return choice(bot_response_yes)
         else:
             return choice(bot_response_no)
             
     else:
-        pass
+
+        print("wrong input")
         
-get_answer_to_first_question(user_response)
+# get_answer_to_first_question(user_response)
+print("Hello, my  name is Arthur. I am a sentient AI Chatbot.")
 
+user_response = ""
 
+while True:
+    
+    
+    user_response = input("Are you ready to begin a series of Matrix trivia questions?(yes/no)")
+    
+    bot_response = get_answer_to_first_question(user_response)
 
+    print(bot_response)
 
+    if user_response == 'done':
+        print('see ya')
 
-
-
-
-
-
-
-
-#'This is your last chance. After this, there is no turning back. You take the no option– the story ends, you restart the program and try      again. You take the no option – you stay in Wonderland and I show you how deep the rabbit-hole goes. - Morpheus (Probably)'
+        break
