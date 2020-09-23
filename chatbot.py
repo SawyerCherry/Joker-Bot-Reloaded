@@ -2,11 +2,11 @@ from random import choice
 import sys
 
 def get_answer_to_first_question(user_response):
-
+#various responses for if the user types no
     bot_response_no = ["Are you sure? I'll give you another chance", "Who wouldn't want to hear a joke", "Eventually you'll have to say yes, you know that right?"]
-
+#various responses for if the user types yes, these are the jokes
     bot_response_yes = ["My friend thinks he is smart. He told me an onion is the only food that makes you cry, so I threw a coconut at his face.", "Can a kangaroo jump higher than the Empire State Building? Of course. The Empire State Building can't jump.", "Why couldn't the leopard play hide and seek? Because he was always spotted.", "Did you hear about the kidnapping at school? It's okay. He woke up.", "When life gives you melons, you're dyslexic.", "I was addicted to the hokey pokey, then I turned myself around."]
-    
+
     if user_response == "yes":
 
         return choice(bot_response_yes)
